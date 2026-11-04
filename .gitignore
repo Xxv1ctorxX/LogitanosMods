@@ -1,0 +1,19 @@
+# Gradle / build
+.gradle/
+build/
+run/
+out/
+bin/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Crashes de la JVM
+hs_err_pid*.log
+replay_pid*.log
+
+# SO
+Thumbs.db
+.DS_Store

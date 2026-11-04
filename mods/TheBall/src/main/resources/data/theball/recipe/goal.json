@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": ["AAA", "SSS", "A A"],
+	"key": { "A": "theball:aluminum_ingot", "S": "minecraft:string" },
+	"result": { "id": "theball:goal", "count": 1 }
+}

@@ -1,0 +1,20 @@
+{
+	"block.theball.aluminum_block": "Bloque de aluminio",
+	"item.theball.goal": "Portería de fútbol",
+	"block.theball.cone": "Cono",
+	"message.theball.goal": "¡¡GOOOL!!",
+	"block.theball.aluminum_ore": "Mena de aluminio",
+	"block.theball.deepslate_aluminum_ore": "Mena de aluminio de pizarra",
+	"item.theball.raw_aluminum": "Aluminio en bruto",
+	"item.theball.aluminum_ingot": "Lingote de aluminio",
+	"item.theball.bocata": "Bocata",
+	"item.theball.durum": "Durum",
+	"item.theball.aluminum_foil": "Papel de aluminio",
+	"item.theball.aluminum_ball": "Bola de aluminio",
+	"item.theball.aluminum_ball.sized": "Bola de aluminio (%s hojas)",
+	"entity.theball.aluminum_ball": "Bola de aluminio",
+	"entity.theball.goal": "Portería de fútbol",
+	"itemGroup.theball": "The Ball",
+	"message.theball.max_size": "¡La bola ya no puede ser más grande! (máximo %s hojas)",
+	"message.theball.need_foil": "¡No tienes suficiente papel! Necesitas %s para añadir una hoja más."
+}

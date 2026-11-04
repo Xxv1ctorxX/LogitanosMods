@@ -1,0 +1,9 @@
+{
+	"required": true,
+	"package": "com.theball.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": ["AnvilMenuMixin"],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

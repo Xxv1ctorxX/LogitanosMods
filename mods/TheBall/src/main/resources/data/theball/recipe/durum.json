@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"IBI",
+		"ICI",
+		"IBI"
+	],
+	"key": {
+		"I": "theball:aluminum_ingot",
+		"B": "minecraft:bread",
+		"C": ["minecraft:cooked_porkchop", "minecraft:cooked_beef", "minecraft:cooked_mutton", "minecraft:cooked_chicken", "minecraft:cooked_rabbit"]
+	},
+	"result": {
+		"id": "theball:durum",
+		"count": 1
+	}
+}

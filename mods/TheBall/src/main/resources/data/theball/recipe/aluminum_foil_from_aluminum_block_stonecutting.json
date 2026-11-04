@@ -1,0 +1,5 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": "theball:aluminum_block",
+	"result": { "id": "theball:aluminum_foil", "count": 5 }
+}

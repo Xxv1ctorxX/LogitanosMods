@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"pattern": ["###", "###", "###"],
+	"key": { "#": "theball:aluminum_ingot" },
+	"result": { "id": "theball:aluminum_block" }
+}

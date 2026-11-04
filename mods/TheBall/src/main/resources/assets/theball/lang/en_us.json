@@ -1,0 +1,20 @@
+{
+	"block.theball.aluminum_block": "Aluminum Block",
+	"item.theball.goal": "Football Goal",
+	"block.theball.cone": "Training Cone",
+	"message.theball.goal": "GOAL!!",
+	"block.theball.aluminum_ore": "Aluminum Ore",
+	"block.theball.deepslate_aluminum_ore": "Deepslate Aluminum Ore",
+	"item.theball.raw_aluminum": "Raw Aluminum",
+	"item.theball.aluminum_ingot": "Aluminum Ingot",
+	"item.theball.bocata": "Sandwich",
+	"item.theball.durum": "Durum Wrap",
+	"item.theball.aluminum_foil": "Aluminum Foil",
+	"item.theball.aluminum_ball": "Aluminum Ball",
+	"item.theball.aluminum_ball.sized": "Aluminum Ball (%s sheets)",
+	"entity.theball.aluminum_ball": "Aluminum Ball",
+	"entity.theball.goal": "Football Goal",
+	"itemGroup.theball": "The Ball",
+	"message.theball.max_size": "The ball can't get any bigger! (max %s sheets)",
+	"message.theball.need_foil": "Not enough foil! You need %s to add one more sheet."
+}

@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "theball",
+	"version": "${version}",
+	"name": "The Ball",
+	"description": "Come un bocata, recupera el papel de aluminio y fabrica una bola gigante que puedes empujar, agrandar y recoger.",
+	"authors": ["TheBall"],
+	"license": "MIT",
+	"icon": "assets/theball/icon.png",
+	"environment": "*",
+	"mixins": ["theball.mixins.json"],
+	"entrypoints": {
+		"main": ["com.theball.TheBallMod"],
+		"client": ["com.theball.client.TheBallClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

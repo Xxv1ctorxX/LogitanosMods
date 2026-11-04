@@ -1,0 +1,1 @@
+{"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"theball:cone"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}],"random_sequence":"theball:blocks/cone"}

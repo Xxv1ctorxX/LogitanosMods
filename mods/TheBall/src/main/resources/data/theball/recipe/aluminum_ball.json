@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": [
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil",
+		"theball:aluminum_foil"
+	],
+	"result": { "id": "theball:aluminum_ball", "count": 1 }
+}
