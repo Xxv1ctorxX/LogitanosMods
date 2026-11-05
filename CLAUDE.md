@@ -7,7 +7,7 @@ Cada mod es un proyecto Gradle independiente en `mods/<Nombre>/`. Hoy solo exist
 
 ```
 README.md                      índice de mods + instalar/compilar/añadir mod (para humanos)
-.github/workflows/build.yml    un job por mod; releases por tag  <mod>-v<versión>  (p. ej. theball-v1.0.0)
+jar/<Mod>/                     los .jar ya compilados, listos para el servidor
 mods/<Mod>/
   README.md                    instalación, CRAFTEOS (con imágenes), mecánicas, ids, notas de desarrollo
   docs/                        notas de diseño; docs/recipes/*.png = imágenes de crafteo generadas
@@ -15,11 +15,14 @@ mods/<Mod>/
   src/ build.gradle ...
 ```
 
+No hay CI: **nada se compila en GitHub, todo se compila en local** (`gradlew build` o el `compilar.ps1` de cada mod)
+y el `.jar` se copia a `jar/<Mod>/`. No crear workflows ni añadir jobs de Actions.
+
 Cada mod debe indicar sus versiones de Minecraft / Fabric Loader / Fabric API / Java tanto en su README como en la
 tabla del README raíz (se actualizan a mano si cambia `gradle.properties`).
 
-Al añadir un mod nuevo hay que: crear `mods/<Mod>/`, escribir su README (con crafteos), añadir un job en
-`build.yml` copiando el de `theball`, y añadirlo a la tabla de `README.md` raíz.
+Al añadir un mod nuevo hay que: crear `mods/<Mod>/`, escribir su README (con crafteos), y añadirlo a la tabla de
+`README.md` raíz.
 `.gitignore` raíz ya excluye `.gradle/`, `build/`, `run/`, logs de crash de la JVM (`hs_err_pid*`, `replay_pid*`).
 
 Cosas del entorno: la ruta contiene `ñ` (`Coñas`); en Git Bash funciona entre comillas. Si el cwd del shell está
@@ -32,7 +35,8 @@ usuario los pida (`git init` hecho en `main`).
    `mods/TheBall/`, `CONTEXTO.md` a `mods/TheBall/docs/` (marcado como histórico/desfasado) y se borraron los logs
    de crash de la JVM.
 2. El workflow de GitHub estaba dentro del mod (no lo lee GitHub en un monorepo): se movió a `.github/workflows/`
-   con `working-directory: mods/TheBall`.
+   con `working-directory: mods/TheBall`. **Después se eliminó: el usuario no quiere ejecuciones automáticas en la
+   nube, así que no hay CI en el repo.**
 3. El README del mod estaba desfasado (decía hierro en vez de aluminio, no tenía aluminio/portería/cono/yunque).
    Se reescribió **leyendo las fuentes reales**, no la documentación vieja:
    - Recetas: `src/main/resources/data/<modid>/recipe/*.json`
@@ -42,6 +46,18 @@ usuario los pida (`git init` hecho en `main`).
    - Nombres: `assets/<modid>/lang/es_es.json`
 
    **Regla: al documentar un mod, el código y los JSON mandan; los README/CONTEXTO antiguos pueden mentir.**
+
+## The Ball 1.1 (el Trono y la Reina de Aluminio)
+
+- Diseño en `mods/TheBall/plan_update.md` (con §17 = lo que cambió al implementarlo). Estructura del código en la
+  sección «Para desarrolladores» del README del mod. Balance en `config/theball.json` (clase `TheBallConfig`).
+- Texturas de la 1.1: `tools/generate_king_textures.py` (no toca las de la 1.0, que salen de `generate_textures.py`).
+- Para comprobar APIs de 26.3: `javap -cp <jar>` sobre los jars de `.gradle/loom-cache/minecraftMaven/...` (common y
+  clientOnly; en Git Bash el classpath se separa con `;`). Cosas que ya han cambiado respecto a 1.21: `syncVelocity`
+  en vez de `hurtMarked`, `EntityTypes.TEXT_DISPLAY`, `PoseStack.rotateDegrees(Axis, deg)`, `FLASH` necesita
+  `ColorParticleOption`, `drop(stack, false, Prediction.SERVER_ONLY)`, `ServerEntityLevelChangeEvents`.
+- `./gradlew runServer` usa `mods/TheBall/run/`; sin `eula.txt` aceptado se para tras inicializar el mod (sirve para
+  ver que registra bien). Aceptar el EULA lo decide el usuario.
 
 ## Cómo se generan las imágenes de crafteo
 

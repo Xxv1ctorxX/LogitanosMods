@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "theslave:piedra_infectada",
+    "theslave:pizarra_infectada",
+    "theslave:netherrack_infectada",
+    "theslave:piedra_negra_infectada",
+    "theslave:urna_animas",
+    "theslave:lampara_animas",
+    "theslave:piedra_registro",
+    "theslave:altar_ceniza"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "theslave:block/cesped_infectado_top",
+    "side": "theslave:block/cesped_infectado_side",
+    "bottom": "theslave:block/tierra_infectada"
+  }
+}

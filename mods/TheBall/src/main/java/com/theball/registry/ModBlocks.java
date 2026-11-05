@@ -2,6 +2,7 @@ package com.theball.registry;
 
 import com.theball.TheBallMod;
 import com.theball.block.ConeBlock;
+import com.theball.block.ThroneBlock;
 import java.util.function.Function;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,6 +26,11 @@ public final class ModBlocks {
 
 	public static final Block CONE = registerBlock("cone", ConeBlock::new,
 			BlockBehaviour.Properties.of().strength(0.3f).sound(SoundType.WOOL).noOcclusion());
+
+	/** Trono de aluminio: aguanta explosiones como la obsidiana (resistencia 1200). */
+	public static final Block THRONE = registerBlock("throne", ThroneBlock::new,
+			BlockBehaviour.Properties.of().strength(5.0f, 1200.0f).requiresCorrectToolForDrops()
+					.sound(SoundType.METAL).noOcclusion());
 
 	private ModBlocks() {
 	}

@@ -1,0 +1,80 @@
+{
+  "textures": {
+    "side": "theslave:block/altar_side",
+    "top": "theslave:block/altar_top",
+    "front": "theslave:block/altar_front",
+    "vela": "theslave:block/altar_vela",
+    "llama": "theslave:block/altar_llama",
+    "particle": "theslave:block/altar_side"
+  },
+  "elements": [
+    {
+      "from": [
+        2.0,
+        14,
+        13.0
+      ],
+      "to": [
+        3.0,
+        15.8,
+        14.0
+      ],
+      "faces": {
+        "down": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "north": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#llama",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// Loom ya añade los repositorios de Minecraft y Fabric.
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"theslave" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// Desde 26.1 Minecraft no está ofuscado: no hay 'mappings' ni 'modImplementation'.
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+def modVersion = project.version.toString()
+
+processResources {
+	inputs.property "version", modVersion
+
+	filesMatching("fabric.mod.json") {
+		expand "version": modVersion
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_theslave" }
+	}
+}
+
+// Verifica la malla real y su deformacion sin arrancar un cliente ni descargar JUnit.
+sourceSets {
+	whipTest {
+		java.srcDir 'src/whipTest/java'
+		compileClasspath += sourceSets.main.output + sourceSets.client.output + sourceSets.client.compileClasspath
+		runtimeClasspath += output + compileClasspath
+	}
+}
+
+// Las pruebas y previsualizaciones mantienen sus temporales dentro del proyecto.
+tasks.withType(JavaExec).configureEach {
+ systemProperty 'java.io.tmpdir', layout.buildDirectory.dir('tmp').get().asFile.absolutePath
+}
+
+tasks.register('verifyWhip', JavaExec) {
+	dependsOn tasks.named('whipTestClasses')
+	classpath = sourceSets.whipTest.runtimeClasspath
+	mainClass = 'com.theslave.client.LatigoTest'
+}
+
+tasks.named('check') { dependsOn tasks.named('verifyWhip') }
+
+tasks.register('previewWhip', JavaExec) {
+	dependsOn tasks.named('whipTestClasses')
+	classpath = sourceSets.whipTest.runtimeClasspath
+	mainClass = 'com.theslave.client.LatigoPreview'
+}
+
+ tasks.register('verifyLore', JavaExec) {
+  dependsOn tasks.named('whipTestClasses')
+  classpath = sourceSets.whipTest.runtimeClasspath
+  mainClass = 'com.theslave.client.LoreTest'
+ }
+ tasks.named('check') { dependsOn tasks.named('verifyLore') }
+
+tasks.register('previewLore', JavaExec) {
+ dependsOn tasks.named('whipTestClasses')
+ classpath = sourceSets.whipTest.runtimeClasspath
+ mainClass = 'com.theslave.client.LorePreview'
+}
+
+['Fabricacion': 'FabricacionTest', 'KnowledgeBudget': 'KnowledgeBudgetTest',
+ 'TrabajoSeguro': 'TrabajoSeguroTest', 'Ritual': 'RitualSecuenciaTest', 'World': 'WorldLogicTest', 'Logic': 'LogicAuditTest',
+ 'RitualDurable': 'RitualDurableTest', 'EntityDurability': 'EntityDurabilityTest',
+ 'DeathDurability': 'DeathDurabilityTest', 'HomeDurability': 'HomeDurabilityTest'].each { label, testClass ->
+ tasks.register("verify${label}", JavaExec) {
+  dependsOn tasks.named('whipTestClasses')
+  classpath = sourceSets.whipTest.runtimeClasspath
+  mainClass = "com.theslave.client.${testClass}"
+ }
+ tasks.named('check') { dependsOn tasks.named("verify${label}") }
+}

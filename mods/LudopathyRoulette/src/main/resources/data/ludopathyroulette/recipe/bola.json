@@ -1,0 +1,20 @@
+{
+  "category": "redstone",
+  "result": {
+    "id": "ludopathyroulette:bola",
+    "count": 1
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OGO",
+    "IRI",
+    "PPP"
+  ],
+  "key": {
+    "O": "minecraft:gold_ingot",
+    "R": "minecraft:redstone",
+    "G": "minecraft:glass",
+    "P": "minecraft:oak_planks",
+    "I": "minecraft:iron_ingot"
+  }
+}

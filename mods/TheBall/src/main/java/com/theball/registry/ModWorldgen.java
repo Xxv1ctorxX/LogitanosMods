@@ -13,7 +13,15 @@ public final class ModWorldgen {
 	private ModWorldgen() {
 	}
 
+	/** Solo para pruebas: con THEBALL_SKIP_WORLDGEN=true el mod no añade aluminio ni lo completa (simula un mundo antiguo). */
+	public static boolean skipped() {
+		return Boolean.getBoolean("theball.skipworldgen") || "true".equals(System.getenv("THEBALL_SKIP_WORLDGEN"));
+	}
+
 	public static void register() {
+		if (skipped()) {
+			return; // solo para pruebas: genera mundos "antiguos" sin aluminio
+		}
 		for (String name : new String[] {"ore_aluminum_upper", "ore_aluminum_middle", "ore_aluminum_small"}) {
 			BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES,
 					ResourceKey.create(Registries.PLACED_FEATURE, TheBallMod.id(name)));

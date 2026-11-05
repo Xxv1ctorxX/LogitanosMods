@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theslave:tierra_infectada",
+    "theslave:cesped_infectado",
+    "theslave:grava_infectada",
+    "theslave:arena_infectada",
+    "theslave:losa_ceniza"
+  ]
+}

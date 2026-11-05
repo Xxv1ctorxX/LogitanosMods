@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+		"A A",
+		"AGA",
+		"AAA"
+	],
+	"key": {
+		"A": "theball:aluminum_block",
+		"G": "minecraft:gold_block"
+	},
+	"result": {
+		"id": "theball:throne",
+		"count": 1
+	}
+}

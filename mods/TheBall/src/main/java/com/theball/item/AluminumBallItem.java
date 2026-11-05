@@ -4,6 +4,11 @@ import com.theball.entity.AluminumBallEntity;
 import com.theball.registry.ModComponents;
 import com.theball.registry.ModEntities;
 import com.theball.registry.ModItems;
+import com.theball.throne.Contributor;
+import com.theball.throne.Tribute;
+import java.util.List;
+import java.util.function.Consumer;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -16,13 +21,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * Versión en item de la bola. Guarda su tamaño en el componente {@code theball:sheets}.
+ * Versión en item de la bola. Guarda su tamaño en el componente {@code theball:sheets} y, si ha pasado por un
+ * trono, quién ha aportado papel ({@code theball:contributions}) y los premios ya dados ({@code theball:rewards_given}).
  * Mantener el click derecho carga el lanzamiento y al soltar sale la bola hacia donde mires
- * (con un toque rápido simplemente la sueltas delante de ti).
+ * (con un toque rápido simplemente la sueltas delante de ti). Para sentarla, click derecho sobre un trono.
  */
 public class AluminumBallItem extends Item {
 	/** Tamaño inicial: muy pequeña (0.12 bloques, como un cubo de Rubik pequeño). */
@@ -47,8 +55,32 @@ public class AluminumBallItem extends Item {
 		return stack;
 	}
 
+	public static ItemStack create(int sheets, Tribute tribute) {
+		ItemStack stack = create(sheets);
+		tribute.applyTo(stack);
+		return stack;
+	}
+
 	public static int getSheets(ItemStack stack) {
 		return stack.getOrDefault(ModComponents.SHEETS, DEFAULT_SHEETS);
+	}
+
+	/** Tooltip: diámetro y, si tiene, los tres que más papel han puesto. */
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display,
+			Consumer<Component> tooltip, TooltipFlag flag) {
+		int sheets = getSheets(stack);
+		tooltip.accept(Component.translatable("tooltip.theball.ball.diameter",
+				String.format("%.2f", AluminumBallEntity.diameterFor(sheets))).withStyle(ChatFormatting.GRAY));
+		List<Contributor> list = stack.getOrDefault(ModComponents.CONTRIBUTIONS, List.of());
+		if (!list.isEmpty()) {
+			Tribute tribute = Tribute.fromStack(stack);
+			tooltip.accept(Component.translatable("tooltip.theball.ball.tribute", tribute.totalFoil())
+					.withStyle(ChatFormatting.GOLD));
+			for (Contributor c : tribute.top(3)) {
+				tooltip.accept(Component.literal("  " + c.name() + " — " + c.foil()).withStyle(ChatFormatting.YELLOW));
+			}
+		}
 	}
 
 	// ---------------------------------------------------------------- carga y lanzamiento
@@ -80,6 +112,7 @@ public class AluminumBallItem extends Item {
 
 		AluminumBallEntity ball = new AluminumBallEntity(ModEntities.ALUMINUM_BALL, level);
 		ball.setSheets(getSheets(stack));
+		ball.setTribute(Tribute.fromStack(stack));
 
 		// Sale justo delante de los ojos, fuera del jugador.
 		Vec3 look = user.getLookAngle();

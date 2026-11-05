@@ -1,0 +1,6 @@
+{
+	"explosive.god_mode": { "sounds": ["theball:modo_dios"] },
+	"explosive.slam": { "sounds": ["theball:golpe"] },
+	"coronation.start": { "sounds": ["theball:coronamiento"] },
+	"coronation.music": { "sounds": [{ "name": "theball:fondo_coronamiento", "stream": true }] }
+}

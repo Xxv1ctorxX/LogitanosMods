@@ -1,0 +1,14 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "theball:aluminum_king"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "theball:aluminum_king"
+			}
+		]
+	}
+}

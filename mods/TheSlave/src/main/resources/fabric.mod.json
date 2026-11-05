@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "theslave",
+	"version": "${version}",
+	"name": "The Slave",
+	"icon": "assets/theslave/icon.png",
+	"description": "Trabajadores vinculados por pactos oscuros: mineria, tala, fabricacion y fundicion, con mercaderes ocultos, invocacion, fusion y resurreccion.",
+	"authors": ["Logitanos"],
+	"license": "MIT",
+	"environment": "*",
+    "mixins": ["theslave.mixins.json"],
+	"entrypoints": {
+		"main": ["com.theslave.TheSlaveMod"],
+		"client": ["com.theslave.client.TheSlaveClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

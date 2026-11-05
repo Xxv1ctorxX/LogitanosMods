@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass",
+    "minecraft:glass",
+    "minecraft:glass",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "id": "theslave:relicario_animas",
+    "count": 1
+  }
+}

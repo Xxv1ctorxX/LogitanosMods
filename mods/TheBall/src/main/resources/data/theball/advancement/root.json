@@ -1,0 +1,30 @@
+{
+	"display": {
+		"icon": {
+			"id": "theball:aluminum_ball"
+		},
+		"title": {
+			"translate": "advancements.theball.root.title"
+		},
+		"description": {
+			"translate": "advancements.theball.root.description"
+		},
+		"frame": "task",
+		"show_toast": false,
+		"announce_to_chat": false,
+		"hidden": false,
+		"background": "minecraft:gui/advancements/backgrounds/stone"
+	},
+	"criteria": {
+		"foil": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "theball:aluminum_foil"
+					}
+				]
+			}
+		}
+	}
+}

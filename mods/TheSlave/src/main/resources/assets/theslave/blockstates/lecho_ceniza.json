@@ -1,0 +1,132 @@
+{
+  "variants": {
+    "facing=north,part=head,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_vivo",
+      "y": 0
+    },
+    "facing=east,part=head,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_vivo",
+      "y": 90
+    },
+    "facing=south,part=head,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_vivo",
+      "y": 180
+    },
+    "facing=west,part=head,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_vivo",
+      "y": 270
+    },
+    "facing=north,part=head,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_vivo_fusionado",
+      "y": 0
+    },
+    "facing=east,part=head,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_vivo_fusionado",
+      "y": 90
+    },
+    "facing=south,part=head,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_vivo_fusionado",
+      "y": 180
+    },
+    "facing=west,part=head,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_vivo_fusionado",
+      "y": 270
+    },
+    "facing=north,part=head,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_tumba",
+      "y": 0
+    },
+    "facing=east,part=head,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_tumba",
+      "y": 90
+    },
+    "facing=south,part=head,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_tumba",
+      "y": 180
+    },
+    "facing=west,part=head,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_head_tumba",
+      "y": 270
+    },
+    "facing=north,part=head,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_tumba_fusionado",
+      "y": 0
+    },
+    "facing=east,part=head,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_tumba_fusionado",
+      "y": 90
+    },
+    "facing=south,part=head,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_tumba_fusionado",
+      "y": 180
+    },
+    "facing=west,part=head,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_head_tumba_fusionado",
+      "y": 270
+    },
+    "facing=north,part=foot,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo",
+      "y": 0
+    },
+    "facing=east,part=foot,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo",
+      "y": 90
+    },
+    "facing=south,part=foot,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo",
+      "y": 180
+    },
+    "facing=west,part=foot,grave=false,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo",
+      "y": 270
+    },
+    "facing=north,part=foot,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo_fusionado",
+      "y": 0
+    },
+    "facing=east,part=foot,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo_fusionado",
+      "y": 90
+    },
+    "facing=south,part=foot,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo_fusionado",
+      "y": 180
+    },
+    "facing=west,part=foot,grave=false,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_vivo_fusionado",
+      "y": 270
+    },
+    "facing=north,part=foot,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba",
+      "y": 0
+    },
+    "facing=east,part=foot,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba",
+      "y": 90
+    },
+    "facing=south,part=foot,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba",
+      "y": 180
+    },
+    "facing=west,part=foot,grave=true,fusionado=false": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba",
+      "y": 270
+    },
+    "facing=north,part=foot,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba_fusionado",
+      "y": 0
+    },
+    "facing=east,part=foot,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba_fusionado",
+      "y": 90
+    },
+    "facing=south,part=foot,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba_fusionado",
+      "y": 180
+    },
+    "facing=west,part=foot,grave=true,fusionado=true": {
+      "model": "theslave:block/lecho_ceniza_foot_tumba_fusionado",
+      "y": 270
+    }
+  }
+}

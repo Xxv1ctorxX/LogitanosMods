@@ -1,0 +1,38 @@
+{
+  "win": {
+    "subtitle": "subtitles.ludopathyroulette.win",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.note_block.bell"
+      }
+    ]
+  },
+  "roll": {
+    "subtitle": "subtitles.ludopathyroulette.roll",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.grindstone.use"
+      }
+    ]
+  },
+  "bounce": {
+    "subtitle": "subtitles.ludopathyroulette.bounce",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.stone.hit"
+      }
+    ]
+  },
+  "click": {
+    "subtitle": "subtitles.ludopathyroulette.click",
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.note_block.hat"
+      }
+    ]
+  }
+}

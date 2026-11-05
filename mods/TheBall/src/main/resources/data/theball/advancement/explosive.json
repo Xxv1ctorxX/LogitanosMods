@@ -1,0 +1,23 @@
+{
+	"parent": "theball:coronation",
+	"display": {
+		"icon": {
+			"id": "theball:aluminum_scepter"
+		},
+		"title": {
+			"translate": "advancements.theball.explosive.title"
+		},
+		"description": {
+			"translate": "advancements.theball.explosive.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theslave:archivo_condenas",
+    "theslave:mesa_notario",
+    "theslave:raiz_ceniza",
+    "theslave:raicillas_infectadas",
+    "theslave:velas_notario"
+  ]
+}

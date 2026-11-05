@@ -1,0 +1,241 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:compass",
+    "target": "lodestone",
+    "scale": 32.0,
+    "entries": [
+      {
+        "threshold": 0.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_00"
+        }
+      },
+      {
+        "threshold": 0.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_01"
+        }
+      },
+      {
+        "threshold": 1.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_02"
+        }
+      },
+      {
+        "threshold": 2.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_03"
+        }
+      },
+      {
+        "threshold": 3.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_04"
+        }
+      },
+      {
+        "threshold": 4.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_05"
+        }
+      },
+      {
+        "threshold": 5.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_06"
+        }
+      },
+      {
+        "threshold": 6.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_07"
+        }
+      },
+      {
+        "threshold": 7.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_08"
+        }
+      },
+      {
+        "threshold": 8.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_09"
+        }
+      },
+      {
+        "threshold": 9.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_10"
+        }
+      },
+      {
+        "threshold": 10.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_11"
+        }
+      },
+      {
+        "threshold": 11.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_12"
+        }
+      },
+      {
+        "threshold": 12.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_13"
+        }
+      },
+      {
+        "threshold": 13.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_14"
+        }
+      },
+      {
+        "threshold": 14.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_15"
+        }
+      },
+      {
+        "threshold": 15.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_16"
+        }
+      },
+      {
+        "threshold": 16.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_17"
+        }
+      },
+      {
+        "threshold": 17.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_18"
+        }
+      },
+      {
+        "threshold": 18.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_19"
+        }
+      },
+      {
+        "threshold": 19.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_20"
+        }
+      },
+      {
+        "threshold": 20.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_21"
+        }
+      },
+      {
+        "threshold": 21.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_22"
+        }
+      },
+      {
+        "threshold": 22.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_23"
+        }
+      },
+      {
+        "threshold": 23.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_24"
+        }
+      },
+      {
+        "threshold": 24.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_25"
+        }
+      },
+      {
+        "threshold": 25.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_26"
+        }
+      },
+      {
+        "threshold": 26.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_27"
+        }
+      },
+      {
+        "threshold": 27.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_28"
+        }
+      },
+      {
+        "threshold": 28.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_29"
+        }
+      },
+      {
+        "threshold": 29.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_30"
+        }
+      },
+      {
+        "threshold": 30.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_31"
+        }
+      },
+      {
+        "threshold": 31.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "theslave:item/brujula_ceniza_00"
+        }
+      }
+    ]
+  }
+}

@@ -270,7 +270,11 @@ public class GoalEntity extends Entity {
 
 			if (ball.tickCount - ball.lastGoalTick >= GOAL_COOLDOWN_TICKS) {
 				ball.lastGoalTick = ball.tickCount;
-				celebrate(serverLevel);
+				if (ball.isRoyalKick()) {
+					celebrateRoyal(serverLevel, ball);
+				} else {
+					celebrate(serverLevel);
+				}
 			}
 		}
 	}
@@ -288,6 +292,32 @@ public class GoalEntity extends Entity {
 		serverLevel.playSound(null, getX(), getY() + 1.0, getZ(),
 				SoundEvents.PLAYER_LEVELUP, SoundSource.NEUTRAL, 1.0f, 1.2f);
 		serverLevel.sendParticles(ParticleTypes.FIREWORK, getX(), getY() + 1.4, getZ(), 60, 1.2, 0.6, 1.2, 0.12);
+	}
+
+	/** Gol marcado con un chute del cetro (Golazo): celebración especial y logro para quien chutó. */
+	private void celebrateRoyal(ServerLevel serverLevel, AluminumBallEntity ball) {
+		ServerPlayer kicker = ball.getKickOwner() == null ? null
+				: serverLevel.getServer().getPlayerList().getPlayer(ball.getKickOwner());
+		Component message = Component.translatable("message.theball.royal_goal",
+				kicker == null ? "?" : kicker.getGameProfile().name()).withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD);
+		for (ServerPlayer player : serverLevel.players()) {
+			if (player.distanceToSqr(this) < 96.0 * 96.0) {
+				player.sendOverlayMessage(message);
+			}
+		}
+		Vec3 top = position().add(0.0, HEIGHT + 0.5, 0.0);
+		com.theball.throne.Fanfare.rocket(serverLevel, top.add(-2.5, 0, 0), 1,
+				net.minecraft.world.item.component.FireworkExplosion.Shape.STAR, com.theball.throne.Fanfare.GOLD);
+		com.theball.throne.Fanfare.rocket(serverLevel, top.add(2.5, 0, 0), 1,
+				net.minecraft.world.item.component.FireworkExplosion.Shape.STAR, com.theball.throne.Fanfare.GOLD);
+		com.theball.throne.Fanfare.rocket(serverLevel, top, 2,
+				net.minecraft.world.item.component.FireworkExplosion.Shape.LARGE_BALL, com.theball.throne.Fanfare.GOLD,
+				com.theball.throne.Fanfare.WHITE);
+		serverLevel.playSound(null, getX(), getY() + 1.0, getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.NEUTRAL, 2.0f, 1.0f);
+		serverLevel.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, getX(), getY() + 1.4, getZ(), 120, 2.0, 1.0, 2.0, 0.5);
+		if (kicker != null) {
+			com.theball.registry.ModAdvancements.grant(kicker, com.theball.registry.ModAdvancements.ROYAL_GOAL);
+		}
 	}
 
 	/** Golpearla (el larguero) la recoge. */

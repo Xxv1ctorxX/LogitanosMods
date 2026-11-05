@@ -1,0 +1,199 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "theslave:block/altar_ceniza"
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "theslave:block/altar_ceniza",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "theslave:block/altar_ceniza",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "theslave:block/altar_ceniza",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "vela_0": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_0",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "vela_0": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_0",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "vela_0": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_0",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "vela_0": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_0",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "vela_1": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_1",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "vela_1": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_1",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "vela_1": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_1",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "vela_1": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_1",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "vela_2": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_2",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "vela_2": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_2",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "vela_2": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_2",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "vela_2": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_2",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "vela_3": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_3",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "vela_3": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_3",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "vela_3": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_3",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "vela_3": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "theslave:block/altar_llama_3",
+        "y": 270
+      }
+    }
+  ]
+}

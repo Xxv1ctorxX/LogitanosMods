@@ -1,0 +1,23 @@
+{
+	"parent": "theball:seat",
+	"display": {
+		"icon": {
+			"id": "theball:aluminum_foil"
+		},
+		"title": {
+			"translate": "advancements.theball.patron.title"
+		},
+		"description": {
+			"translate": "advancements.theball.patron.description"
+		},
+		"frame": "goal",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

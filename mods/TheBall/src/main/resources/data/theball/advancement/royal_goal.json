@@ -1,0 +1,23 @@
+{
+	"parent": "theball:root",
+	"display": {
+		"icon": {
+			"id": "theball:goal"
+		},
+		"title": {
+			"translate": "advancements.theball.royal_goal.title"
+		},
+		"description": {
+			"translate": "advancements.theball.royal_goal.description"
+		},
+		"frame": "goal",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": true
+	},
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

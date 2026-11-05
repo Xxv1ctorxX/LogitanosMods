@@ -1,0 +1,23 @@
+{
+	"parent": "theball:patron",
+	"display": {
+		"icon": {
+			"id": "theball:aluminum_crown"
+		},
+		"title": {
+			"translate": "advancements.theball.coronation.title"
+		},
+		"description": {
+			"translate": "advancements.theball.coronation.description"
+		},
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

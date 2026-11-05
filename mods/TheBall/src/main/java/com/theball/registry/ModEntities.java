@@ -2,6 +2,9 @@ package com.theball.registry;
 
 import com.theball.TheBallMod;
 import com.theball.entity.AluminumBallEntity;
+import com.theball.entity.ExplosiveShotEntity;
+import com.theball.entity.FoilShotEntity;
+import com.theball.entity.PowerVisualEntity;
 import com.theball.entity.GoalEntity;
 import com.theball.entity.GoalPartEntity;
 import net.minecraft.core.Registry;
@@ -53,6 +56,51 @@ public final class ModEntities {
 					.noSummon()
 					.fireImmune()
 					.build(GOAL_PART_KEY));
+
+	public static final ResourceKey<EntityType<?>> FOIL_SHOT_KEY =
+			ResourceKey.create(Registries.ENTITY_TYPE, TheBallMod.id("foil_shot"));
+
+	/** Bola rebotona del cetro. */
+	public static final EntityType<FoilShotEntity> FOIL_SHOT = Registry.register(
+			BuiltInRegistries.ENTITY_TYPE,
+			FOIL_SHOT_KEY,
+			EntityType.Builder.<FoilShotEntity>of(FoilShotEntity::new, MobCategory.MISC)
+					.sized(FoilShotEntity.SIZE, FoilShotEntity.SIZE)
+					.clientTrackingRange(6)
+					.updateInterval(2)
+					.noSave()
+					.build(FOIL_SHOT_KEY));
+
+	public static final ResourceKey<EntityType<?>> EXPLOSIVE_SHOT_KEY =
+			ResourceKey.create(Registries.ENTITY_TYPE, TheBallMod.id("explosive_shot"));
+
+	/** Bola de aluminio explosivo (y la gigante del remate). */
+	public static final EntityType<ExplosiveShotEntity> EXPLOSIVE_SHOT = Registry.register(
+			BuiltInRegistries.ENTITY_TYPE,
+			EXPLOSIVE_SHOT_KEY,
+			EntityType.Builder.<ExplosiveShotEntity>of(ExplosiveShotEntity::new, MobCategory.MISC)
+					.sized(0.7f, 0.7f)
+					.clientTrackingRange(16)
+					.updateInterval(2)
+					.noSave()
+					.fireImmune()
+					.build(EXPLOSIVE_SHOT_KEY));
+
+	public static final ResourceKey<EntityType<?>> POWER_VISUAL_KEY =
+			ResourceKey.create(Registries.ENTITY_TYPE, TheBallMod.id("power_visual"));
+
+	/** Esfera del Modo Bola / halo de la Ascensión (solo visual). */
+	public static final EntityType<PowerVisualEntity> POWER_VISUAL = Registry.register(
+			BuiltInRegistries.ENTITY_TYPE,
+			POWER_VISUAL_KEY,
+			EntityType.Builder.<PowerVisualEntity>of(PowerVisualEntity::new, MobCategory.MISC)
+					.sized(0.1f, 0.1f)
+					.clientTrackingRange(8)
+					.updateInterval(1)
+					.noSave()
+					.noSummon()
+					.fireImmune()
+					.build(POWER_VISUAL_KEY));
 
 	private ModEntities() {
 	}

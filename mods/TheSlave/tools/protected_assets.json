@@ -1,0 +1,11 @@
+{
+  "src/main/resources/assets/theslave/latigo_geometry.json": "5b007d979e64981e3c32bd7aaa131e33c2c16aab8249a2ef851d696061a1af20",
+  "src/main/resources/assets/theslave/items/latigo.json": "770156f7b1cf34b02691874d25c150c9fde644a2b165750513bf1f527e200237",
+  "src/main/resources/assets/theslave/items/contrato.json": "a071de88295523e70ee4b056c4426104fed9cdb918dc07a4de446b94c4e2243a",
+  "src/main/resources/assets/theslave/models/item/latigo.json": "c4faf302f7c73e9fa46e2245480b9f0555cce8bdd60e70eeea853b9a113aa354",
+  "src/main/resources/assets/theslave/models/item/contrato.json": "50f6be599645839c09f4741a0dc5fefe4e53d3b193f7db2989ab24a74aa99955",
+  "src/main/resources/assets/theslave/models/item/latigo_icon.json": "351ac01e32525fb891905407489c676b5f3c1d44cac3d12277c1bb766c2d346c",
+  "src/main/resources/assets/theslave/textures/item/latigo.png": "27384b87199eb305c4e818a247c2e94e5187d3305acdb6faf26f65a0b1d21a38",
+  "src/main/resources/assets/theslave/textures/item/contrato.png": "0137ccb95e18b1aa0f94814cf113bedd5ad3116192c57454214bc8d5d2185476",
+  "src/main/resources/assets/theslave/textures/item/latigo_3d.png": "9e17039eb41e8755709cfc7946352d67017dc3909916d444f8d47f31139e86ed"
+}

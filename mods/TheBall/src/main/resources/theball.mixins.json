@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "com.theball.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": ["AnvilMenuMixin"],
+	"mixins": ["AnvilMenuMixin", "EntityDeflectionMixin"],
 	"injectors": {
 		"defaultRequire": 1
 	}

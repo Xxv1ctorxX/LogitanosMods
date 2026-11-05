@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "ludopathyroulette",
+  "version": "${version}",
+  "name": "Ludopathy Roulette",
+  "description": "Dos ruletas de Logitanos con premios, castigos y administración protegida.",
+  "authors": ["Logitanos"],
+  "license": "MIT",
+  "icon": "assets/ludopathyroulette/icon.png",
+  "environment": "*",
+  "mixins": ["ludopathyroulette.mixins.json"],
+  "entrypoints": {
+    "main": ["com.ludopathyroulette.RouletteMod"],
+    "client": ["com.ludopathyroulette.client.RouletteClient"]
+  },
+  "depends": {"fabricloader": ">=0.20.1", "minecraft": "~26.3", "java": ">=25", "fabric-api": "*"}
+}

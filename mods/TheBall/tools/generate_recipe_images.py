@@ -65,6 +65,8 @@ class Textures:
             return self.cache[ref]
         if ref == "mod:cone":
             img = cone_icon(self)
+        elif ref == "mod:throne":
+            img = throne_icon(self)
         elif ref.startswith("cube:"):
             img = cube_icon(self.raw(ref[5:]))
         else:
@@ -97,6 +99,37 @@ def cone_icon(tex):
     for y in (12, 13):
         for x in range(1, 15):
             px[x, y] = base
+    return img
+
+
+def throne_icon(tex):
+    """Trono de aluminio visto de frente en 16x16 (su item es un modelo de bloque con varias piezas)."""
+    metal = avg(tex.raw("mod:block/throne_metal"))
+    dark = tuple(int(c * 0.7) for c in metal[:3]) + (255,)
+    cushion = avg(tex.raw("mod:block/throne_cushion"))
+    gold = avg(tex.raw("mod:block/throne_gold"))
+    img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    px = img.load()
+
+    def rect(x0, y0, x1, y1, color):
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                px[x, y] = color
+    rect(3, 3, 12, 13, metal)       # respaldo
+    rect(5, 5, 10, 8, cushion)      # cojín del respaldo
+    rect(3, 2, 12, 2, gold)         # remate dorado
+    for x in (3, 7, 8, 12):
+        px[x, 1] = gold             # pináculos y cresta
+    px[7, 0] = gold
+    px[8, 0] = gold
+    rect(1, 8, 2, 13, metal)        # brazos
+    rect(13, 8, 14, 13, metal)
+    rect(1, 7, 2, 7, gold)
+    rect(13, 7, 14, 7, gold)
+    rect(3, 10, 12, 10, cushion)    # asiento
+    rect(4, 11, 11, 13, dark)       # frente del asiento
+    rect(7, 12, 8, 12, gold)        # emblema
+    rect(0, 14, 15, 15, metal)      # peana
     return img
 
 
@@ -299,6 +332,8 @@ def build(tex):
              shapeless=True, note="9 papeles de aluminio (en cualquier posición)")
     crafting(tex, "aluminum_block", [[ingot, ingot, ingot], [ingot, ingot, ingot], [ingot, ingot, ingot]], block)
     crafting(tex, "aluminum_ingots_from_block", [[block]], ingot, 9, shapeless=True)
+    crafting(tex, "throne", [[block, None, block], [block, "cube:mc:block/gold_block", block], [block, block, block]],
+             "mod:throne", note="7 bloques de aluminio + 1 bloque de oro")
 
     simple(tex, "furnace", "Horno (10 s)  /  Alto horno (5 s)",
            [([ore], ingot, 1), ([deep], ingot, 1), ([raw], ingot, 1)],

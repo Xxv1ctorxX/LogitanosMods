@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=west": {
+      "y": 270,
+      "model": "ludopathyroulette:block/bola"
+    },
+    "facing=north": {
+      "y": 0,
+      "model": "ludopathyroulette:block/bola"
+    },
+    "facing=south": {
+      "y": 180,
+      "model": "ludopathyroulette:block/bola"
+    },
+    "facing=east": {
+      "y": 90,
+      "model": "ludopathyroulette:block/bola"
+    }
+  }
+}

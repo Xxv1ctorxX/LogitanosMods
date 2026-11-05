@@ -3,6 +3,7 @@ package com.theball.mixin;
 import com.theball.entity.AluminumBallEntity;
 import com.theball.item.AluminumBallItem;
 import com.theball.registry.ModItems;
+import com.theball.throne.Tribute;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AnvilMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -42,7 +43,9 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 		}
 
 		int total = AluminumBallItem.getSheets(left) + AluminumBallItem.getSheets(right);
-		ItemStack result = AluminumBallItem.create(Math.min(total, AluminumBallEntity.MAX_SHEETS));
+		// Aportes sumados por jugador; un premio dado en cualquiera de las dos sigue contando como dado.
+		Tribute tribute = Tribute.merge(Tribute.fromStack(left), Tribute.fromStack(right));
+		ItemStack result = AluminumBallItem.create(Math.min(total, AluminumBallEntity.MAX_SHEETS), tribute);
 
 		this.onlyRenaming = false;
 		this.repairItemCountCost = 0; // se consumen las dos bolas enteras

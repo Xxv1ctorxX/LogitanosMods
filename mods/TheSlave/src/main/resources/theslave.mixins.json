@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.theslave.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": ["PlayerListSaveInvoker", "PlayerCustodyMixin", "PacketCustodyMixin", "EntityStorageMixin", "ServerLevelEntityAccess", "PersistentEntityAccess", "ItemCustodyMixin", "HopperCustodyMixin"],
+  "injectors": {"defaultRequire": 1}
+}

@@ -4,6 +4,9 @@ import com.theball.TheBallMod;
 import com.theball.item.AluminumBallItem;
 import com.theball.item.FoilFoodItem;
 import com.theball.item.GoalItem;
+import com.theball.item.KingArmor;
+import com.theball.item.ScepterItem;
+import com.theball.item.TributeMedalItem;
 import java.util.function.Function;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
@@ -15,6 +18,8 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.equipment.ArmorType;
 
 public final class ModItems {
 	/** Bocata: devuelve 1 papel de aluminio. */
@@ -47,6 +52,21 @@ public final class ModItems {
 					.stacksTo(1)
 					.component(ModComponents.SHEETS, AluminumBallItem.DEFAULT_SHEETS));
 
+	// ---------------------------------------------------------------- recompensas del trono
+
+	/** La Corona de aluminio es el casco del Rey: lleva los poderes (Modo Bola, Rebote, Reflejo). */
+	public static final Item ALUMINUM_CROWN = register("aluminum_crown", Item::new, KingArmor.properties(ArmorType.HELMET));
+	public static final Item ALUMINUM_CHESTPLATE = register("aluminum_chestplate", Item::new, KingArmor.properties(ArmorType.CHESTPLATE));
+	public static final Item ALUMINUM_LEGGINGS = register("aluminum_leggings", Item::new, KingArmor.properties(ArmorType.LEGGINGS));
+	public static final Item ALUMINUM_BOOTS = register("aluminum_boots", Item::new, KingArmor.properties(ArmorType.BOOTS));
+
+	/** Cetro del Rey de Aluminio: sin durabilidad, gasta papel de aluminio del inventario. */
+	public static final Item ALUMINUM_SCEPTER = register("aluminum_scepter", ScepterItem::new,
+			new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
+
+	public static final Item TRIBUTE_MEDAL = register("tribute_medal", TributeMedalItem::new,
+			new Item.Properties().stacksTo(1).rarity(Rarity.RARE));
+
 	public static final ResourceKey<CreativeModeTab> TAB_KEY =
 			ResourceKey.create(Registries.CREATIVE_MODE_TAB, TheBallMod.id("the_ball"));
 
@@ -70,6 +90,13 @@ public final class ModItems {
 				output.accept(AluminumBallItem.create(1000));
 				output.accept(AluminumBallItem.create(1500));
 				output.accept(AluminumBallItem.create(2000));
+				output.accept(ModBlocks.THRONE);
+				output.accept(ALUMINUM_CROWN);
+				output.accept(ALUMINUM_CHESTPLATE);
+				output.accept(ALUMINUM_LEGGINGS);
+				output.accept(ALUMINUM_BOOTS);
+				output.accept(ALUMINUM_SCEPTER);
+				output.accept(TRIBUTE_MEDAL);
 			})
 			.build();
 

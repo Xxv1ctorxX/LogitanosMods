@@ -1,0 +1,19 @@
+{
+  "category": "redstone",
+  "result": {
+    "id": "ludopathyroulette:fortuna",
+    "count": 1
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PIP",
+    "RGR",
+    "PIP"
+  ],
+  "key": {
+    "R": "minecraft:redstone",
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:glass",
+    "P": "minecraft:oak_planks"
+  }
+}
